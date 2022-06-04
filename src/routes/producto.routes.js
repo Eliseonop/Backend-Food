@@ -9,7 +9,7 @@ import {
 import { validarClientOrAdmin, validarAdmin } from '../utils/validador.js'
 export const productoRouter = Router()
 
-productoRouter.route('/newproducto').post(validarAdmin, crearProducto)
+productoRouter.route('/productos').post(validarAdmin, crearProducto)
 productoRouter.get('/productos', obtenerProductos)
 productoRouter
   .route('/producto/:id', validarAdmin)

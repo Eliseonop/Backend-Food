@@ -12,7 +12,7 @@ import {
 } from '../utils/validador.js'
 export const pedidoRouter = Router()
 
-pedidoRouter.route('/newpedido').post(validarUsuario, crearPedido)
+pedidoRouter.route('/pedidos').post(validarUsuario, crearPedido)
 pedidoRouter.get('/pedidos', obtenerPedidos)
 pedidoRouter
   .route('/pedido/:id')
