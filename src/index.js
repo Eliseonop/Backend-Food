@@ -21,7 +21,7 @@ app.get('/api', (req, res) => {
   // enviar un h1
   res.send(`<h1>Bienvenido a la API de la tienda</h1>
   <h2>
-  <a>https://documenter.getpostman.com/view/17188507/Uz5DocEi#80dda58c-902a-4ac6-b063-a64ae14fc971</a></h2>`)
+  <a src='https://documenter.getpostman.com/view/17188507/Uz5DocEi#80dda58c-902a-4ac6-b063-a64ae14fc971'>Documentacion</a></h2>`)
 })
 
 app.use('/api', clienteRouter)
