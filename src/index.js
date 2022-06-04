@@ -5,7 +5,7 @@ import { clienteRouter } from './routes/cliente.routes.js'
 import { pedidoRouter } from './routes/pedido.routes.js'
 import { AdminRouter } from './routes/administrador.routes.js'
 import { productoRouter } from './routes/producto.routes.js'
-import morgan from 'morgan'
+// import morgan from 'morgan'
 const app = express()
 const PORT = process.env.PORT || 5000
 
