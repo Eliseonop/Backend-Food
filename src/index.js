@@ -14,6 +14,10 @@ app.use(morgan('dev'))
 app.use(cors())
 app.use(json())
 
+app.get('/', (req, res) => {
+  res.send('Bienvenido a la API de la tienda')
+})
+
 app.use('/api', clienteRouter)
 app.use('/api', pedidoRouter)
 app.use('/api', AdminRouter)
