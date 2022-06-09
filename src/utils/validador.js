@@ -20,7 +20,7 @@ export async function validarUsuario (req, res, next) {
   }
 
   const token = req.headers.authorization.split(' ')[1]
-
+  console.log(token)
   const resultado = verificarToken(token)
 
   if (resultado instanceof jwt.JsonWebTokenError) {
@@ -55,7 +55,7 @@ export async function validarAdmin (req, res, next) {
   }
 
   const token = req.headers.authorization.split(' ')[1]
-
+  console.log(token)
   const resultado = verificarToken(token)
 
   if (resultado instanceof jwt.JsonWebTokenError) {
