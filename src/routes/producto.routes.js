@@ -12,7 +12,7 @@ export const productoRouter = Router()
 productoRouter.route('/productos').post(validarAdmin, crearProducto)
 productoRouter.get('/productos', obtenerProductos)
 productoRouter
-  .route('/producto/:id', validarAdmin)
+  .route('/productos/:id', validarAdmin)
   .put(validarAdmin, actualizarProducto)
   .delete(validarAdmin, eliminarProducto)
   .get(obtenerProductoId)
