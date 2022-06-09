@@ -6,7 +6,7 @@ export class AdministradorService {
     try {
       const nuevoAdministrador = await administradorModel.create(administrador)
       const admin = await administradorModel.findById(nuevoAdministrador._id)
-      if (!admin) throw new Error('El cliente ya fue')
+      if (!admin) throw new Error('El admin ya fue')
 
       const token = jwt.sign(
         {
@@ -40,7 +40,7 @@ export class AdministradorService {
   static async loginAdmin (email, password) {
     try {
       const cliente = await administradorModel.findOne({ email })
-      if (!cliente) throw new Error('El cliente no existe')
+      if (!cliente) throw new Error('Creadenciales incorrecta, no existe')
 
       const validPassword = bcrypt.compareSync(password, cliente.password)
 
