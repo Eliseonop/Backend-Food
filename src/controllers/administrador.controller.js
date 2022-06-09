@@ -9,7 +9,7 @@ export async function crearAdministrador (req, res) {
   } catch (error) {
     res.status(400).json({
       message: 'Error al crear el administrador',
-      error: error.code === 11000 ? 'El cliente ya existe' : error.message
+      error: error.code === 11000 ? 'El admin ya existe' : error.message
     })
   }
 }
