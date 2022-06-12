@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import { clienteModel } from '../models/cliente.model.js'
 import { administradorModel } from '../models/administrador.model.js'
 export function verificarToken (token) {
+ 
   try {
     const payload = jwt.verify(token, process.env.SECRET_JWT)
     return payload
@@ -55,9 +56,9 @@ export async function validarAdmin (req, res, next) {
   }
 
   const token = req.headers.authorization.split(' ')[1]
-  console.log(token)
+  console.log(req.headers.authorization)
   const resultado = verificarToken(token)
-
+  console.log(resultado)
   if (resultado instanceof jwt.JsonWebTokenError) {
     return res.status(403).json({
       message: 'La token es invalida, intente nuevamente',
@@ -89,7 +90,7 @@ export async function validarClientOrAdmin (req, res, next) {
     })
   }
 
-  const token = req.headers.authorization.split(' ')[1]
+  const token = req.headers.authorization.split(' ')[1].replace(/['"]+/g, '')
 
   const resultado = verificarToken(token)
 

@@ -8,7 +8,9 @@ export class ClienteService {
       // const { email } = data
 
       const nuevoCliente = clienteModel.create(data)
-      return nuevoCliente
+      return {
+        message: 'Cliente creado correctamente'
+      }
     } catch (error) {
       return {
         message: 'Error al crear el cliente xd',
