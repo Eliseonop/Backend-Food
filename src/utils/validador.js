@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken'
 import { clienteModel } from '../models/cliente.model.js'
 import { administradorModel } from '../models/administrador.model.js'
 export function verificarToken (token) {
- 
   try {
     const payload = jwt.verify(token, process.env.SECRET_JWT)
     return payload

@@ -13,6 +13,8 @@ export class PedidoService {
           return productoEncontrado
         })
       )
+
+      console.log(productosEncontrados.includes(null))
       const total = productosEncontrados.reduce((total, producto) => {
         return total + producto.precio
       }, 0)
@@ -29,10 +31,11 @@ export class PedidoService {
 
       return nuevoPedido
     } catch (error) {
-      return {
+      console.log(error)
+      throw new Error({
         message: 'Error al crear el pedido',
-        error: error.message
-      }
+        error
+      })
     }
   }
   static async actualizarPedido (id, data) {
