@@ -55,7 +55,19 @@ export class PedidoService {
       }
       const pedido = await pedidoModel.findByIdAndUpdate(id, data)
       if (!pedido) throw new Error('El pedido no existe')
-      const pedidoActualizado = await pedidoModel.findById(id)
+      const pedidoActualizado = await pedidoModel
+        .findById(id)
+        .populate('cliente', {
+          nombre: 1,
+          apellido: 1,
+          email: 1,
+          id: 1
+        })
+        .populate('productos', {
+          nombre: 1,
+          precio: 1,
+          id: 1
+        })
       return pedidoActualizado
     } catch (error) {
       throw new Error(error.message)
