@@ -40,7 +40,7 @@ export class AdministradorService {
   static async loginAdmin (email, password) {
     try {
       const cliente = await administradorModel.findOne({ email })
-      if (!cliente) throw new Error('Creadenciales incorrecta, no existe')
+      if (!cliente) throw new Error('Email incorrecto, intente de nuevo')
 
       const validPassword = bcrypt.compareSync(password, cliente.password)
 
